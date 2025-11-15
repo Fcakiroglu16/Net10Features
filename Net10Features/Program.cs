@@ -1,5 +1,6 @@
 ﻿using Net10Features.Features;
 using Net10Features.EFCoreFeatures.Features;
+using Net10Features.Net9Features.Features;
 
 Console.WriteLine("╔════════════════════════════════════════════════════════════╗");
 Console.WriteLine("║      .NET 10 and C# 14 Features Demonstration             ║");
@@ -19,7 +20,7 @@ await Task.Run(() => CollectionExpressionImprovements.Demonstrate());
 await Task.Run(() => ParamsCollectionEnhancements.Demonstrate());
 
 // 3. LINQ Improvements
-await Task.Run(() => LinqImprovements.Demonstrate());
+await Task.Run(() => Net10Features.Features.LinqImprovements.Demonstrate());
 
 // 4. Async/Await Improvements
 await AsyncImprovements.DemonstrateAsync();
@@ -35,6 +36,30 @@ await Task.Run(() => FieldKeywordInProperties.Demonstrate());
 
 // 8. Ref Struct Enhancements
 await Task.Run(() => RefStructEnhancements.Demonstrate());
+
+// ========== .NET 9 Features ==========
+Console.WriteLine("\n╔════════════════════════════════════════════════════════════╗");
+Console.WriteLine("║                  .NET 9 Features                           ║");
+Console.WriteLine("╚════════════════════════════════════════════════════════════╝");
+Console.WriteLine();
+
+// 1. LINQ Improvements (CountBy, AggregateBy, Index)
+await Task.Run(() => Net10Features.Net9Features.Features.LinqImprovements.Demonstrate());
+
+// 2. TimeProvider
+await TimeProviderFeature.DemonstrateAsync();
+
+// 3. SearchValues Optimization
+await Task.Run(() => SearchValuesOptimization.Demonstrate());
+
+// 4. CollectionsMarshal Features
+await Task.Run(() => CollectionsMarshalFeatures.Demonstrate());
+
+// 5. Tensor and AI Features
+await Task.Run(() => TensorAndAIFeatures.Demonstrate());
+
+// 6. Regex Improvements
+await Task.Run(() => RegexImprovements.Demonstrate());
 
 // ========== EF Core 10 Features ==========
 Console.WriteLine("\n╔════════════════════════════════════════════════════════════╗");
