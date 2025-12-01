@@ -19,6 +19,7 @@ namespace Net10Features.EFCoreFeatures;
  * ?   ??? JsonColumnImprovements.cs   - Enhanced JSON querying
  * ?   ??? RawSqlImprovements.cs       - Better raw SQL and LINQ composition
  * ?   ??? SentinelValues.cs           - Distinguish "not set" from "default value"
+ * ?   ??? CompiledQueries.cs          - Pre-compiled LINQ queries for performance
  * ?
  * ??? AppDbContext.cs        - Database context with all EF Core 10 configurations
  * ??? README.md              - Comprehensive documentation
@@ -62,10 +63,16 @@ namespace Net10Features.EFCoreFeatures;
  *    - Non-NULL database columns
  *    - Example: -1 for not set, 0 for no discount, >0 for discount
  * 
+ * 7. COMPILED QUERIES (CompiledQueries.cs)
+ *    - Pre-compiled LINQ expressions for reuse
+ *    - Eliminates query translation overhead
+ *    - Significant performance improvement
+ *    - Example: Frequently executed queries
+ * 
  * 
  * USAGE:
  * 
- * Each feature class has a DemonstrateAsync() method:
+ * Each feature class has a DemonstrateAsync() or Demonstrate() method:
  * 
  *   await ComplexTypeSupport.DemonstrateAsync();
  *   await PrimitiveCollections.DemonstrateAsync();
@@ -73,6 +80,7 @@ namespace Net10Features.EFCoreFeatures;
  *   await JsonColumnImprovements.DemonstrateAsync();
  *   await RawSqlImprovements.DemonstrateAsync();
  *   await SentinelValues.DemonstrateAsync();
+ *   CompiledQueries.DemonstrateCompiledQueries();
  * 
  * 
  * DATABASE:
